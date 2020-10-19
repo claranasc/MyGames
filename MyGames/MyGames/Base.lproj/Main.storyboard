@@ -135,21 +135,104 @@
             </objects>
             <point key="canvasLocation" x="337.68115942028987" y="888.61607142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Adicionar novo jogo-->
         <scene sceneID="LZX-wf-t75">
             <objects>
                 <viewController id="ijo-1B-6SF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xkc-Nt-Yfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do jogo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xU-Zz-Zw2">
+                                <rect key="frame" x="16" y="106" width="382" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wcv-GS-U2u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Plataforma" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zX6-jc-OmE">
+                                <rect key="frame" x="16" y="149" width="382" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AIZ-DP-001"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Lançamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmG-IN-TAk">
+                                <rect key="frame" x="16" y="194" width="382" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="sTR-hl-42X">
+                                <rect key="frame" x="16" y="218" width="382" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="41V-8Y-kes"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF1-js-evQ">
+                                <rect key="frame" x="16" y="350" width="382" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="54p-Zd-JB5">
+                                <rect key="frame" x="16" y="375" width="382" height="366"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-gp-rrH">
+                                <rect key="frame" x="16" y="757" width="382" height="40"/>
+                                <color key="backgroundColor" name="main"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ebf-Ex-mB1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="ADICIONAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg5-23-yPq">
+                                <rect key="frame" x="184" y="543" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Toque para adicionar a imagem de capa"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="centerX" secondItem="54p-Zd-JB5" secondAttribute="centerX" id="2k7-Lf-Kqo"/>
+                            <constraint firstItem="kF1-js-evQ" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="2wh-n6-6bv"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="width" secondItem="54p-Zd-JB5" secondAttribute="width" multiplier="0.120419" id="4cl-Xg-D4O"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="centerY" secondItem="54p-Zd-JB5" secondAttribute="centerY" id="5LS-ZL-bWf"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="2xU-Zz-Zw2" secondAttribute="trailing" constant="16" id="7Jh-PI-OfP"/>
+                            <constraint firstItem="eDE-gp-rrH" firstAttribute="top" secondItem="54p-Zd-JB5" secondAttribute="bottom" constant="16" id="9BI-jC-gyn"/>
+                            <constraint firstItem="kF1-js-evQ" firstAttribute="top" secondItem="sTR-hl-42X" secondAttribute="bottom" constant="12" id="C1Q-HP-vMo"/>
+                            <constraint firstItem="eDE-gp-rrH" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="C4C-tz-j9n"/>
+                            <constraint firstItem="2xU-Zz-Zw2" firstAttribute="top" secondItem="cdN-Ra-rzT" secondAttribute="top" constant="18" id="Dqd-tX-Lbo"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="54p-Zd-JB5" secondAttribute="trailing" constant="16" id="DuE-8G-4N0"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="kF1-js-evQ" secondAttribute="trailing" constant="16" id="HLz-JM-xqy"/>
+                            <constraint firstItem="sTR-hl-42X" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="Lgl-gv-dc1"/>
+                            <constraint firstItem="zX6-jc-OmE" firstAttribute="top" secondItem="2xU-Zz-Zw2" secondAttribute="bottom" constant="13" id="OUY-b1-XtT"/>
+                            <constraint firstItem="pmG-IN-TAk" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="T2l-78-n5d"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="sTR-hl-42X" secondAttribute="trailing" constant="16" id="Tp7-tU-SQJ"/>
+                            <constraint firstItem="pmG-IN-TAk" firstAttribute="top" secondItem="zX6-jc-OmE" secondAttribute="bottom" constant="15" id="ZQR-ga-ZgN"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="eDE-gp-rrH" secondAttribute="trailing" constant="16" id="c4d-Yh-LTX"/>
+                            <constraint firstItem="zX6-jc-OmE" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="cIZ-AH-9yy"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="zX6-jc-OmE" secondAttribute="trailing" constant="16" id="gWt-rd-JKN"/>
+                            <constraint firstItem="sTR-hl-42X" firstAttribute="top" secondItem="pmG-IN-TAk" secondAttribute="bottom" constant="7" id="j6j-qL-XVp"/>
+                            <constraint firstItem="54p-Zd-JB5" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="lLX-4j-Ltr"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="bottom" secondItem="eDE-gp-rrH" secondAttribute="bottom" constant="16" id="lcQ-j2-S4s"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="height" secondItem="54p-Zd-JB5" secondAttribute="height" multiplier="0.0819672" id="ly7-rt-O5P"/>
+                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="pmG-IN-TAk" secondAttribute="trailing" constant="16" id="qxD-fU-7DN"/>
+                            <constraint firstItem="2xU-Zz-Zw2" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="sSf-W4-TmE"/>
+                            <constraint firstItem="54p-Zd-JB5" firstAttribute="top" secondItem="kF1-js-evQ" secondAttribute="bottom" constant="8" id="yJj-Ft-IdR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cdN-Ra-rzT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lPt-Gf-QMs"/>
+                    <navigationItem key="navigationItem" title="Adicionar novo jogo" id="0GY-54-1Op"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiA-N9-KZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="889"/>
+            <point key="canvasLocation" x="1079.7101449275362" y="888.61607142857144"/>
         </scene>
         <!--Lista de Plataformas-->
         <scene sceneID="q6D-Lp-NdO">
@@ -250,10 +333,10 @@
         <image name="console" width="23" height="23"/>
         <image name="game" width="23" height="23"/>
         <namedColor name="main">
-            <color red="0.0" green="0.68235294117647061" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.68199998140335083" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="second">
-            <color red="1" green="0.23529411764705882" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23499999940395355" blue="0.58399999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
