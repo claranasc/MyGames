@@ -11,7 +11,7 @@
         <!--Lista de Jogos-->
         <scene sceneID="MLc-S9-Ubx">
             <objects>
-                <tableViewController id="DM6-qb-UX4" sceneMemberID="viewController">
+                <tableViewController id="DM6-qb-UX4" customClass="GamesTableViewController" customModule="MyGames" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2NY-so-auk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="1079.7101449275362" y="143.97321428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="VM8-Im-zOa">
             <objects>
-                <viewController id="VyA-oA-uVU" sceneMemberID="viewController">
+                <viewController id="VyA-oA-uVU" customClass="GameViewController" customModule="MyGames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bdc-7b-S9c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
         <!--Adicionar novo jogo-->
         <scene sceneID="LZX-wf-t75">
             <objects>
-                <viewController id="ijo-1B-6SF" sceneMemberID="viewController">
+                <viewController id="ijo-1B-6SF" customClass="AddEditViewController" customModule="MyGames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xkc-Nt-Yfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,7 +178,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="54p-Zd-JB5">
-                                <rect key="frame" x="16" y="375" width="382" height="366"/>
+                                <rect key="frame" x="16" y="377" width="382" height="360"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-gp-rrH">
                                 <rect key="frame" x="16" y="757" width="382" height="40"/>
@@ -192,23 +192,22 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg5-23-yPq">
-                                <rect key="frame" x="184" y="543" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="20" y="452" width="374" height="210"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Toque para adicionar a imagem de capa"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wg5-23-yPq" firstAttribute="centerX" secondItem="54p-Zd-JB5" secondAttribute="centerX" id="2k7-Lf-Kqo"/>
                             <constraint firstItem="kF1-js-evQ" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="2wh-n6-6bv"/>
-                            <constraint firstItem="wg5-23-yPq" firstAttribute="width" secondItem="54p-Zd-JB5" secondAttribute="width" multiplier="0.120419" id="4cl-Xg-D4O"/>
-                            <constraint firstItem="wg5-23-yPq" firstAttribute="centerY" secondItem="54p-Zd-JB5" secondAttribute="centerY" id="5LS-ZL-bWf"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="width" secondItem="54p-Zd-JB5" secondAttribute="width" multiplier="0.979058" id="4qA-Dt-UbH"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="centerX" secondItem="54p-Zd-JB5" secondAttribute="centerX" id="6NP-3N-do5"/>
                             <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="2xU-Zz-Zw2" secondAttribute="trailing" constant="16" id="7Jh-PI-OfP"/>
-                            <constraint firstItem="eDE-gp-rrH" firstAttribute="top" secondItem="54p-Zd-JB5" secondAttribute="bottom" constant="16" id="9BI-jC-gyn"/>
                             <constraint firstItem="kF1-js-evQ" firstAttribute="top" secondItem="sTR-hl-42X" secondAttribute="bottom" constant="12" id="C1Q-HP-vMo"/>
                             <constraint firstItem="eDE-gp-rrH" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="C4C-tz-j9n"/>
                             <constraint firstItem="2xU-Zz-Zw2" firstAttribute="top" secondItem="cdN-Ra-rzT" secondAttribute="top" constant="18" id="Dqd-tX-Lbo"/>
-                            <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="54p-Zd-JB5" secondAttribute="trailing" constant="16" id="DuE-8G-4N0"/>
+                            <constraint firstItem="54p-Zd-JB5" firstAttribute="top" secondItem="kF1-js-evQ" secondAttribute="bottom" constant="10" id="GGN-mH-cVH"/>
+                            <constraint firstItem="54p-Zd-JB5" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="HFg-uh-XBQ"/>
                             <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="kF1-js-evQ" secondAttribute="trailing" constant="16" id="HLz-JM-xqy"/>
                             <constraint firstItem="sTR-hl-42X" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="Lgl-gv-dc1"/>
                             <constraint firstItem="zX6-jc-OmE" firstAttribute="top" secondItem="2xU-Zz-Zw2" secondAttribute="bottom" constant="13" id="OUY-b1-XtT"/>
@@ -217,14 +216,15 @@
                             <constraint firstItem="pmG-IN-TAk" firstAttribute="top" secondItem="zX6-jc-OmE" secondAttribute="bottom" constant="15" id="ZQR-ga-ZgN"/>
                             <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="eDE-gp-rrH" secondAttribute="trailing" constant="16" id="c4d-Yh-LTX"/>
                             <constraint firstItem="zX6-jc-OmE" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="cIZ-AH-9yy"/>
+                            <constraint firstAttribute="trailing" secondItem="54p-Zd-JB5" secondAttribute="trailing" constant="16" id="ehm-sH-uYE"/>
                             <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="zX6-jc-OmE" secondAttribute="trailing" constant="16" id="gWt-rd-JKN"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="height" secondItem="54p-Zd-JB5" secondAttribute="height" multiplier="0.583333" id="gXN-xC-b4k"/>
+                            <constraint firstItem="eDE-gp-rrH" firstAttribute="top" secondItem="54p-Zd-JB5" secondAttribute="bottom" constant="20" id="iSY-Ei-DlE"/>
                             <constraint firstItem="sTR-hl-42X" firstAttribute="top" secondItem="pmG-IN-TAk" secondAttribute="bottom" constant="7" id="j6j-qL-XVp"/>
-                            <constraint firstItem="54p-Zd-JB5" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="lLX-4j-Ltr"/>
                             <constraint firstItem="cdN-Ra-rzT" firstAttribute="bottom" secondItem="eDE-gp-rrH" secondAttribute="bottom" constant="16" id="lcQ-j2-S4s"/>
-                            <constraint firstItem="wg5-23-yPq" firstAttribute="height" secondItem="54p-Zd-JB5" secondAttribute="height" multiplier="0.0819672" id="ly7-rt-O5P"/>
                             <constraint firstItem="cdN-Ra-rzT" firstAttribute="trailing" secondItem="pmG-IN-TAk" secondAttribute="trailing" constant="16" id="qxD-fU-7DN"/>
                             <constraint firstItem="2xU-Zz-Zw2" firstAttribute="leading" secondItem="cdN-Ra-rzT" secondAttribute="leading" constant="16" id="sSf-W4-TmE"/>
-                            <constraint firstItem="54p-Zd-JB5" firstAttribute="top" secondItem="kF1-js-evQ" secondAttribute="bottom" constant="8" id="yJj-Ft-IdR"/>
+                            <constraint firstItem="wg5-23-yPq" firstAttribute="centerY" secondItem="54p-Zd-JB5" secondAttribute="centerY" id="xM2-83-nvf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cdN-Ra-rzT"/>
                     </view>
@@ -237,7 +237,7 @@
         <!--Lista de Plataformas-->
         <scene sceneID="q6D-Lp-NdO">
             <objects>
-                <tableViewController id="VIf-X3-pe6" sceneMemberID="viewController">
+                <tableViewController id="VIf-X3-pe6" customClass="ConsolesTableViewController" customModule="MyGames" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NHK-sr-ag3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,6 +299,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="main"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="DM6-qb-UX4" kind="relationship" relationship="rootViewController" id="GhY-FZ-lqH"/>
