@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="Kdw-Cr-6g2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="Kdw-Cr-6g2" customClass="GameTableViewCell" customModule="MyGames" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kdw-Cr-6g2" id="8q3-Ox-1qU">
@@ -60,6 +60,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="ivCover" destination="OWU-ak-Kqs" id="vJ4-eV-pXl"/>
+                                    <outlet property="lbConsole" destination="diL-se-Dwx" id="uCr-Bi-H54"/>
+                                    <outlet property="lbTitle" destination="jyX-G7-4ct" id="oTH-1x-nVY"/>
                                     <segue destination="VyA-oA-uVU" kind="show" id="pEx-ob-lkA"/>
                                 </connections>
                             </tableViewCell>
@@ -69,7 +72,13 @@
                             <outlet property="delegate" destination="DM6-qb-UX4" id="XdR-pE-7aN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de Jogos" id="lT8-vC-Pib"/>
+                    <navigationItem key="navigationItem" title="Lista de Jogos" id="lT8-vC-Pib">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYm-eY-N7S">
+                            <connections>
+                                <segue destination="ijo-1B-6SF" kind="show" id="2Pw-ia-YL3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyL-xq-NKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,10 +139,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ivCover" destination="Yc2-IO-7b3" id="HEF-Ma-BTW"/>
+                        <outlet property="lbConsole" destination="kDe-e9-yO6" id="NKh-zA-rxZ"/>
+                        <outlet property="lbReleaseDate" destination="Ctl-lW-fOv" id="S7x-yX-qTc"/>
+                        <outlet property="lbTitle" destination="Wwi-aW-8Pu" id="kLc-uQ-Vqh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6p-tq-ulz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337.68115942028987" y="888.61607142857144"/>
+            <point key="canvasLocation" x="613" y="909"/>
         </scene>
         <!--Adicionar novo jogo-->
         <scene sceneID="LZX-wf-t75">
@@ -190,6 +205,9 @@
                                 <state key="normal" title="ADICIONAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditCover:" destination="ijo-1B-6SF" eventType="touchUpInside" id="tS2-sa-9tu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg5-23-yPq">
                                 <rect key="frame" x="20" y="452" width="374" height="210"/>
@@ -228,11 +246,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cdN-Ra-rzT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Adicionar novo jogo" id="0GY-54-1Op"/>
+                    <navigationItem key="navigationItem" title="Adicionar novo jogo" largeTitleDisplayMode="never" id="0GY-54-1Op"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="eDE-gp-rrH" id="Qwn-xg-UJc"/>
+                        <outlet property="btCover" destination="wg5-23-yPq" id="GvC-41-1b6"/>
+                        <outlet property="dpReleaseDate" destination="sTR-hl-42X" id="XCp-Yu-yKC"/>
+                        <outlet property="ivCover" destination="54p-Zd-JB5" id="bnp-52-Vun"/>
+                        <outlet property="tfConsole" destination="zX6-jc-OmE" id="hlD-V4-3WU"/>
+                        <outlet property="tfTitle" destination="2xU-Zz-Zw2" id="Xk1-Na-GyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiA-N9-KZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.7101449275362" y="888.61607142857144"/>
+            <point key="canvasLocation" x="1518.840579710145" y="908.70535714285711"/>
         </scene>
         <!--Lista de Plataformas-->
         <scene sceneID="q6D-Lp-NdO">
@@ -266,7 +292,13 @@
                             <outlet property="delegate" destination="VIf-X3-pe6" id="CMD-tU-kov"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de Plataformas" id="45a-Th-gcD"/>
+                    <navigationItem key="navigationItem" title="Lista de Plataformas" id="45a-Th-gcD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qSv-a9-qja">
+                            <connections>
+                                <action selector="addConsole:" destination="VIf-X3-pe6" id="PS7-P9-0aW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpb-QI-aLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,6 +364,9 @@
             <point key="canvasLocation" x="1445" y="-590"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Py4-Cr-ZJa"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>
         <image name="game" width="23" height="23"/>
