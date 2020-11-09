@@ -210,11 +210,17 @@
                                 <state key="normal" title="ADICIONAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditGame:" destination="ijo-1B-6SF" eventType="touchUpInside" id="tpc-a8-pCO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg5-23-yPq">
                                 <rect key="frame" x="20" y="452" width="374" height="210"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Toque para adicionar a imagem de capa"/>
+                                <connections>
+                                    <action selector="addEditCover:" destination="ijo-1B-6SF" eventType="touchUpInside" id="TiA-rb-iAz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -250,8 +256,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar novo jogo" largeTitleDisplayMode="never" id="0GY-54-1Op"/>
                     <connections>
-                        <outlet property="btAddEdit" destination="eDE-gp-rrH" id="Qwn-xg-UJc"/>
-                        <outlet property="btCover" destination="wg5-23-yPq" id="GvC-41-1b6"/>
+                        <outlet property="btAddEdit" destination="eDE-gp-rrH" id="cSm-OK-m4H"/>
+                        <outlet property="btCover" destination="wg5-23-yPq" id="7KX-RX-RYQ"/>
                         <outlet property="dpReleaseDate" destination="sTR-hl-42X" id="XCp-Yu-yKC"/>
                         <outlet property="ivCover" destination="54p-Zd-JB5" id="bnp-52-Vun"/>
                         <outlet property="tfConsole" destination="zX6-jc-OmE" id="hlD-V4-3WU"/>
