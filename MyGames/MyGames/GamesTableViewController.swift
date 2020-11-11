@@ -12,14 +12,19 @@ import CoreData
 class GamesTableViewController: UITableViewController {
 
     var fetchedResultController: NSFetchedResultsController<Game>!
+    var label = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        label.text = "Você não tem jogos cadastrados"
+        label.textAlignment = .center
+       
         loadGames()
     }
     
     func loadGames() {
-        let fetchRequest: NSFetchRequest <Game> = Game.fetchRequest()
+        let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -39,6 +44,8 @@ class GamesTableViewController: UITableViewController {
         
         let count = fetchedResultController.fetchedObjects?.count ?? 0
         
+        tableView.backgroundView = count == 0 ? label : nil
+        
         return count
     }
 
@@ -48,7 +55,8 @@ class GamesTableViewController: UITableViewController {
         guard let game = fetchedResultController.fetchedObjects?[indexPath.row] else {
             return cell
         }
-
+        
+        cell.prepare(with: game)
 
         return cell
     }
@@ -102,17 +110,14 @@ class GamesTableViewController: UITableViewController {
 }
 
 extension GamesTableViewController: NSFetchedResultsControllerDelegate {
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchRequestResultType, newIndexPath: IndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
-//        switch type {
-//            case .delete:
-//                break
-//            default:
-//                tableView.reloadData()
-//        }
+        switch type {
+            case .delete:
+                break
+            default:
+                tableView.reloadData()
+        }
     }
 }
-
-
-//func controller(_ controller: NSFetchResultsController<NSFetchRequestResult>, didChange)
 

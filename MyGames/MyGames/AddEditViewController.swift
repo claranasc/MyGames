@@ -21,7 +21,6 @@ class AddEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func addEditCover(_ sender: UIButton) {

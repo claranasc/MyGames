@@ -16,13 +16,10 @@ class GameTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func prepare(with game: Game) {
@@ -34,5 +31,4 @@ class GameTableViewCell: UITableViewCell {
             ivCover.image = UIImage(named: "noCover")
         }
     }
-
 }
