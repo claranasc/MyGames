@@ -25,7 +25,17 @@ class ConsolesManager {
         }
     }
     
-    private init() {
-        
+    func deleteConsole(index: Int, context: NSManagedObjectContext) {
+        let console = consoles[index]
+        context.delete(console)
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
+    
+    private init() {
+    }
+    
 }
