@@ -25,6 +25,34 @@ class ConsolesTableViewController: UITableViewController {
     @IBAction func addConsole(_ sender: UIBarButtonItem) {
     }
 
+    func showAlert(with console: Console?) {
+        let title = console == nil ? "Adicionar" : "Editar"
+        let alert = UIAlertController(title: title + " plataforma", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Nome da plataforma"
+            if let name = console?.name {
+                textField.text = name
+            }
+        }
+        alert.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+            let console = console ?? Console(context: self.context)
+            console.name = alert.textFields?.first?.text
+            do {
+                try self.context.save()
+                self.loadConsoles()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.view.tintColor = UIColor(named: "second")
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
