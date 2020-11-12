@@ -23,11 +23,16 @@ class AddEditViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         return pickerView
-        
     }()
+    var consolesManager = ConsolesManager.shared
         
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        consolesManager.loadConsoles(with: context)
     }
     
     @IBAction func addEditCover(_ sender: UIButton) {
@@ -48,4 +53,19 @@ class AddEditViewController: UIViewController {
     }
 }
 
-extension
+extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return consolesManager.consoles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let console = consolesManager.consoles[row]
+        return console.name
+    }
+    
+}
+
