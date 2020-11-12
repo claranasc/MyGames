@@ -23,6 +23,7 @@ class ConsolesTableViewController: UITableViewController {
     }
     
     @IBAction func addConsole(_ sender: UIBarButtonItem) {
+        showAlert(with: nil)
     }
 
     func showAlert(with console: Console?) {
