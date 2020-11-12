@@ -18,7 +18,14 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var ivCover: UIImageView!
     
     var game: Game!
-    
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        return pickerView
+        
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -40,3 +47,5 @@ class AddEditViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension
