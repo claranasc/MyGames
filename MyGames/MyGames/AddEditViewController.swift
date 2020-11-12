@@ -28,6 +28,7 @@ class AddEditViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfConsole.inputView = pickerView
     }
     
     override func viewWillAppear(_ animated: Bool) {
