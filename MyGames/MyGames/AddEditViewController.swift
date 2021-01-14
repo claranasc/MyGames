@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEditViewController: UIViewController { //, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class AddEditViewController: UIViewController { //}, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var tfConsole: UITextField!
@@ -29,7 +29,7 @@ class AddEditViewController: UIViewController { //, UIImagePickerControllerDeleg
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbar.tintColor = UIColor(named: "main")
         
@@ -48,10 +48,7 @@ class AddEditViewController: UIViewController { //, UIImagePickerControllerDeleg
     }
     
     @objc func done() {
-        
         tfConsole.text = consolesManager.consoles[pickerView.selectedRow(inComponent: 0)].name
-        
-        
         cancel()
     }
     
@@ -60,30 +57,31 @@ class AddEditViewController: UIViewController { //, UIImagePickerControllerDeleg
         consolesManager.loadConsoles(with: context)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Buttons
+    
+    
     @IBAction func addEditCover(_ sender: UIButton) {
         let alert = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster?", preferredStyle: .actionSheet)
-        
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Câmera", style: .default) { (action: UIAlertAction) in
+            let cameraAction = UIAlertAction(title: "Câmera", style: .default, handler: {(action: UIAlertAction) in
                 self.selectPicture(sourceType: .camera)
-            }
+            })
             alert.addAction(cameraAction)
         }
-        
         let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { (action: UIAlertAction) in
             self.selectPicture(sourceType: .photoLibrary)
         }
         alert.addAction(libraryAction)
-        
         let photosAction = UIAlertAction(title: "Álbum de fotos", style: .default) { (action: UIAlertAction) in
             self.selectPicture(sourceType: .savedPhotosAlbum)
-            
         }
         alert.addAction(photosAction)
-
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        
         present(alert, animated: true, completion: nil)
     }
     
@@ -94,25 +92,31 @@ class AddEditViewController: UIViewController { //, UIImagePickerControllerDeleg
         imagePicker.navigationBar.tintColor = UIColor(named: "main")
         present(imagePicker, animated: true, completion: nil)
     }
-    
+ 
     @IBAction func addEditGame(_ sender: UIButton) {
         if game == nil {
-            game = Game(context: context )
+            game = Game(context: context)
         }
         game.title = tfTitle.text
         game.releaseDate = dpReleaseDate.date
+        
         if !tfConsole.text!.isEmpty {
             let console = consolesManager.consoles[pickerView.selectedRow(inComponent: 0)]
             game.console = console
         }
+        game.cover = ivCover.image
+        
         do {
             try context.save()
         } catch {
             print(error.localizedDescription)
         }
+        
         navigationController?.popViewController(animated: true)
     }
 }
+
+// MARK: - Extensions
 
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -131,7 +135,7 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension AddEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
      
         let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage
         ivCover.image = image
@@ -139,3 +143,4 @@ extension AddEditViewController: UIImagePickerControllerDelegate, UINavigationCo
         dismiss(animated: true, completion: nil)
     }
 }
+
