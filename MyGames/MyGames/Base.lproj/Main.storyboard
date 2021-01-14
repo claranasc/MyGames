@@ -68,7 +68,7 @@
                                     <outlet property="ivCover" destination="OWU-ak-Kqs" id="vJ4-eV-pXl"/>
                                     <outlet property="lbConsole" destination="diL-se-Dwx" id="uCr-Bi-H54"/>
                                     <outlet property="lbTitle" destination="jyX-G7-4ct" id="oTH-1x-nVY"/>
-                                    <segue destination="VyA-oA-uVU" kind="show" id="pEx-ob-lkA"/>
+                                    <segue destination="VyA-oA-uVU" kind="show" identifier="gameSegue" id="pEx-ob-lkA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,7 +80,7 @@
                     <navigationItem key="navigationItem" title="Lista de Jogos" largeTitleDisplayMode="never" id="lT8-vC-Pib">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYm-eY-N7S">
                             <connections>
-                                <segue destination="ijo-1B-6SF" kind="show" id="2Pw-ia-YL3"/>
+                                <segue destination="ijo-1B-6SF" kind="show" identifier="newGameSegue" id="2Pw-ia-YL3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -375,7 +375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Py4-Cr-ZJa"/>
+        <segue reference="2Pw-ia-YL3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>
